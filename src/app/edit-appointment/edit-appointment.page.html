@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Editar referencia bibliográfica
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="updateBookingForm" (ngSubmit)="updateForm()">
+      
+      <ion-item>
+        <ion-label position="floating">ID referencia </ion-label>
+        <ion-input formControlName="idbook" type="number" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Título de la publicación</ion-label>
+        <ion-input formControlName="titulopub" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Autores</ion-label>
+        <ion-input formControlName="autores" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Tipo de publicación</ion-label>
+        <ion-input formControlName="tipopub" type="number" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Evento Revista</ion-label>
+        <ion-input formControlName="eventorevista" type="text">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">DOI</ion-label>
+        <ion-input formControlName="doi" type="text" >
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Año De Publicación</ion-label>
+        <ion-input formControlName="anyopub" type="number" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Actualizar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>

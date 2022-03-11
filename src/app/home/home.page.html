@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Referencias bibliográficas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Referencias
+    </ion-list-header>
+
+    <ion-item *ngFor="let booking of Bookings" class="user-list">
+      <ion-label>
+        
+        <h5><ion-label color="warning">ID referencia </ion-label> {{booking.idbook}}</h5>
+        <h5><ion-label color="warning">Titulo publicación </ion-label> {{booking.titulopub}}</h5>
+        <h5><ion-label color="warning">Autores </ion-label> {{booking.autores}}</h5>
+        <h5><ion-label color="warning">Evento revista </ion-label> {{booking.eventorevista}}</h5>
+        <h5><ion-label color="warning">DOI </ion-label> {{booking.doi}}</h5>
+        <h5><ion-label color="warning">Título de publicación </ion-label> {{booking.tipopub}}</h5>
+        <h5><ion-label color="warning">Año de publicación </ion-label> {{booking.anyopub}}</h5>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/edit-appointment/', booking.$idreferencia]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteBooking(booking.$idreferencia)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
